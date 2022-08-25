@@ -1,0 +1,22 @@
+#container {
+    display: flex;
+}
+
+#inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    height: 40px;
+    width: 40px;
+    border: 1px solid gray;
+}
+
+.box:hover {
+    background-color: lightgray;
+}
+
+.box.pressed {
+    background-color: black;
+}

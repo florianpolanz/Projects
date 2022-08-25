@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let getComputerChoice = function() {
+            let choices = ["rock", "paper", "scissors"];
+            let random = Math.floor((Math.random() * choices.length));
+            return choices[random];
+        }
+
+        let getPlayerChoice = function() {
+            let move;
+
+            do {
+                move = prompt("What is your move?").toLowerCase()
+            } while(move !== "rock" && move !== "paper" && move !== "scissors");
+
+            return move;
+        }
+
+        let evaluateGame = function(playerChoice, computerChoice) {
+            if (playerChoice === computerChoice ){
+                alert("Tie!")
+            }
+            if (playerChoice === "rock" && computerChoice === "scissors") {
+                alert("You win! Rock beats scissors.")
+            }
+            if (playerChoice === "rock" && computerChoice === "paper") {
+                alert("You lose! Paper beats rock.")
+            }
+            if (playerChoice === "scissors" && computerChoice === "paper") {
+                alert("You win! Scissors beat paper.")
+            }
+            if (playerChoice === "scissors" && computerChoice === "rock") {
+                alert("You lose! Rock beats scissors.")
+            }
+            if (playerChoice === "paper" && computerChoice === "rock") {
+                alert("You win! Paper beats rock.")
+            }
+            if (playerChoice === "paper" && computerChoice === "scissors") {
+                alert("You lose! Scissors beat paper.")
+            }
+        }
+
+        const playerChoice = getPlayerChoice();
+        const computerChoice = getComputerChoice();
+
+        evaluateGame(playerChoice, computerChoice)
+
+    </script>
+</body>
+</html>
