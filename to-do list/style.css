@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    background-color: rgb(230, 230, 230);
+    height: 430px;
+    width: 500px;
+    border-radius: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.new, .clear{
+    background-color: orange;
+    padding: 10px 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.clear {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.new span, .clear span {
+    position: relative;
+    z-index: 1;
+}
+
+.new:hover, .clear:hover {
+    cursor: pointer;
+}
+
+.new::before, .clear::before {
+    content: "";
+    position: absolute;
+    background-color: darkorange;
+    width: 0px;
+    height: 0px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.5s, height 0.5s;
+}
+
+.new:hover::before, .clear:hover::before {
+    width: 150px;
+    height: 150px;
+}
+
+.list {
+    position: relative;
+    margin-top: 40px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.item {
+    background-color: white;
+    width: 440px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.done {
+    position: absolute;
+    left: 410px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit {
+    background: none;
+    position: absolute;
+    left: 440px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit:hover {
+    cursor: pointer;
+}
+
+.done:hover{
+    cursor: pointer;
+}
+
+
+textarea {
+    width: 320px;
+    resize: none;
+    border: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.input {
+    display: flex;
+    position: relative;
+    top: 5%;
+    gap: 0px;
+    justify-content: center;
+}
